@@ -15,6 +15,7 @@
 		3611F51B2B07A02A00D5F026 /* HHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611F51A2B07A02A00D5F026 /* HHLabel.swift */; };
 		3611F51F2B07A0F700D5F026 /* HHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611F51E2B07A0F700D5F026 /* HHImage.swift */; };
 		3611F5222B07ACBD00D5F026 /* HHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3611F5212B07ACBD00D5F026 /* HHTextField.swift */; };
+		3617FD1D2B2B920D0057D954 /* HHTipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3617FD1C2B2B920D0057D954 /* HHTipsModel.swift */; };
 		364462D02B080D6C00196085 /* HHAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364462CF2B080D6C00196085 /* HHAlertVC.swift */; };
 		364462D22B080DAE00196085 /* HHAlertContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364462D12B080DAE00196085 /* HHAlertContainer.swift */; };
 		364462D52B080E8500196085 /* HHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364462D42B080E8500196085 /* HHButton.swift */; };
@@ -28,6 +29,14 @@
 		36690D0F2B076BBC00D75390 /* HHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36690D0E2B076BBC00D75390 /* HHViewController.swift */; };
 		36690D142B076BC000D75390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36690D132B076BC000D75390 /* Assets.xcassets */; };
 		36690D172B076BC000D75390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36690D152B076BC000D75390 /* LaunchScreen.storyboard */; };
+		3691E69C2B2CE0360080D7C5 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E69B2B2CE0360080D7C5 /* ImageClient.swift */; };
+		3691E69E2B2CE0590080D7C5 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E69D2B2CE0590080D7C5 /* DataRequest.swift */; };
+		3691E6A02B2CE0800080D7C5 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E69F2B2CE0800080D7C5 /* EndPoints.swift */; };
+		3691E6A22B2CE0AB0080D7C5 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E6A12B2CE0AB0080D7C5 /* HTTPMethods.swift */; };
+		3691E6A42B2CE0D60080D7C5 /* VacancyInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E6A32B2CE0D60080D7C5 /* VacancyInfoRequest.swift */; };
+		3691E6A62B2CE1020080D7C5 /* DetailInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E6A52B2CE1020080D7C5 /* DetailInfoRequest.swift */; };
+		3691E6AA2B2CE2060080D7C5 /* TipsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E6A92B2CE2060080D7C5 /* TipsRequest.swift */; };
+		36DBC91C2B2A1A17000771C5 /* HHTipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBC91B2B2A1A17000771C5 /* HHTipsTableViewCell.swift */; };
 		36F437272B0B9F0F00F66233 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F437262B0B9F0F00F66233 /* Constant.swift */; };
 		36F437292B0BA9CD00F66233 /* HHDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F437282B0BA9CD00F66233 /* HHDetailModel.swift */; };
 		36F4372B2B0BB36400F66233 /* HHDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F4372A2B0BB36400F66233 /* HHDetailViewController.swift */; };
@@ -43,6 +52,7 @@
 		3611F51A2B07A02A00D5F026 /* HHLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLabel.swift; sourceTree = "<group>"; };
 		3611F51E2B07A0F700D5F026 /* HHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHImage.swift; sourceTree = "<group>"; };
 		3611F5212B07ACBD00D5F026 /* HHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHTextField.swift; sourceTree = "<group>"; };
+		3617FD1C2B2B920D0057D954 /* HHTipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHTipsModel.swift; sourceTree = "<group>"; };
 		364462CF2B080D6C00196085 /* HHAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAlertVC.swift; sourceTree = "<group>"; };
 		364462D12B080DAE00196085 /* HHAlertContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHAlertContainer.swift; sourceTree = "<group>"; };
 		364462D42B080E8500196085 /* HHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHButton.swift; sourceTree = "<group>"; };
@@ -58,6 +68,14 @@
 		36690D132B076BC000D75390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36690D162B076BC000D75390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36690D182B076BC000D75390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3691E69B2B2CE0360080D7C5 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		3691E69D2B2CE0590080D7C5 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		3691E69F2B2CE0800080D7C5 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		3691E6A12B2CE0AB0080D7C5 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		3691E6A32B2CE0D60080D7C5 /* VacancyInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyInfoRequest.swift; sourceTree = "<group>"; };
+		3691E6A52B2CE1020080D7C5 /* DetailInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoRequest.swift; sourceTree = "<group>"; };
+		3691E6A92B2CE2060080D7C5 /* TipsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsRequest.swift; sourceTree = "<group>"; };
+		36DBC91B2B2A1A17000771C5 /* HHTipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHTipsTableViewCell.swift; sourceTree = "<group>"; };
 		36F437262B0B9F0F00F66233 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		36F437282B0BA9CD00F66233 /* HHDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDetailModel.swift; sourceTree = "<group>"; };
 		36F4372A2B0BB36400F66233 /* HHDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHDetailViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +105,7 @@
 		3611F50C2B07723E00D5F026 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3611F50D2B07725700D5F026 /* NetworkService.swift */,
+				3691E6992B2CDFB10080D7C5 /* NetworkLayer */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -106,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				3611F5142B07736A00D5F026 /* HHVacanciesModel.swift */,
+				3617FD1C2B2B920D0057D954 /* HHTipsModel.swift */,
 				36F437282B0BA9CD00F66233 /* HHDetailModel.swift */,
 			);
 			path = Models;
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				3611F5172B079F7000D5F026 /* HHTableViewCell.swift */,
+				36DBC91B2B2A1A17000771C5 /* HHTipsTableViewCell.swift */,
 			);
 			path = HHCells;
 			sourceTree = "<group>";
@@ -236,6 +256,29 @@
 			path = HHSearch;
 			sourceTree = "<group>";
 		};
+		3691E6992B2CDFB10080D7C5 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3691E69A2B2CDFBC0080D7C5 /* Requests */,
+				3611F50D2B07725700D5F026 /* NetworkService.swift */,
+				3691E69B2B2CE0360080D7C5 /* ImageClient.swift */,
+				3691E69D2B2CE0590080D7C5 /* DataRequest.swift */,
+				3691E69F2B2CE0800080D7C5 /* EndPoints.swift */,
+				3691E6A12B2CE0AB0080D7C5 /* HTTPMethods.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		3691E69A2B2CDFBC0080D7C5 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				3691E6A32B2CE0D60080D7C5 /* VacancyInfoRequest.swift */,
+				3691E6A52B2CE1020080D7C5 /* DetailInfoRequest.swift */,
+				3691E6A92B2CE2060080D7C5 /* TipsRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		36F4372D2B0BCE7800F66233 /* HHScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,17 +366,26 @@
 				3611F50E2B07725700D5F026 /* NetworkService.swift in Sources */,
 				36F4372F2B0BCE9800F66233 /* HHScrollView.swift in Sources */,
 				364462D22B080DAE00196085 /* HHAlertContainer.swift in Sources */,
+				3691E69E2B2CE0590080D7C5 /* DataRequest.swift in Sources */,
+				3691E6A02B2CE0800080D7C5 /* EndPoints.swift in Sources */,
 				3611F5152B07736A00D5F026 /* HHVacanciesModel.swift in Sources */,
 				3611F51B2B07A02A00D5F026 /* HHLabel.swift in Sources */,
 				360A69D22B0B97E3009EE0F4 /* HHVCPresenter.swift in Sources */,
+				3691E6A22B2CE0AB0080D7C5 /* HTTPMethods.swift in Sources */,
 				3611F5122B0772AB00D5F026 /* HHError.swift in Sources */,
 				364462D02B080D6C00196085 /* HHAlertVC.swift in Sources */,
+				3691E6A42B2CE0D60080D7C5 /* VacancyInfoRequest.swift in Sources */,
 				36690D0D2B076BBC00D75390 /* SceneDelegate.swift in Sources */,
+				36DBC91C2B2A1A17000771C5 /* HHTipsTableViewCell.swift in Sources */,
+				3617FD1D2B2B920D0057D954 /* HHTipsModel.swift in Sources */,
+				3691E6AA2B2CE2060080D7C5 /* TipsRequest.swift in Sources */,
 				364462D52B080E8500196085 /* HHButton.swift in Sources */,
 				3611F5182B079F7000D5F026 /* HHTableViewCell.swift in Sources */,
 				364462D72B080F5C00196085 /* ViewController + ext.swift in Sources */,
 				3611F5222B07ACBD00D5F026 /* HHTextField.swift in Sources */,
 				365F82E02B0CFAD00020CA40 /* HHStackView.swift in Sources */,
+				3691E69C2B2CE0360080D7C5 /* ImageClient.swift in Sources */,
+				3691E6A62B2CE1020080D7C5 /* DetailInfoRequest.swift in Sources */,
 				365F82E32B0D2D120020CA40 /* HHRouter.swift in Sources */,
 				36F437292B0BA9CD00F66233 /* HHDetailModel.swift in Sources */,
 				36F4372B2B0BB36400F66233 /* HHDetailViewController.swift in Sources */,

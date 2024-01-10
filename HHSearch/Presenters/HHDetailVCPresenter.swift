@@ -32,12 +32,11 @@ final class HHDetailVCPresenter: HHDetailVCPresenterProtocol{
     private let networService: Network
     private let locker = NSLock()
     
-    init(from: Int?, to: Int?, currency: String?, id: String, detailView: HHDetailVCProtocol?, network: Network) {
+    init(from: Int?, to: Int?, currency: String?, id: String, network: Network) {
         self.from = from
         self.to = to
         self.currency = currency
         self.id = id
-        self.detailView = detailView
         self.networService = network
     }
     func getDetailVacancyInfo(){
@@ -48,12 +47,13 @@ final class HHDetailVCPresenter: HHDetailVCPresenterProtocol{
 //MARK: - Loading DetailVacancyInfo
 extension HHDetailVCPresenter{
     private func loadDetailVacancyInfo(){
-        networService.getDetailVacancyInfo(for: id) {[weak self] result in
+        let request = DetailInfoRequest(id: id)
+        networService.request(request) {[weak self] result in
             guard let self = self else {return}
             switch result{
-            case .success(let detailInfo):
+            case .success(let result):
                 locker.lock()
-                self.detailVacancyInfo = detailInfo
+                self.detailVacancyInfo = result
                 locker.unlock()
                 detailView?.configUI()
             case .failure(let error):

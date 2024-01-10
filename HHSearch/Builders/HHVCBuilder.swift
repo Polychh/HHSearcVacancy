@@ -14,17 +14,20 @@ protocol BuilderProtocol{
 
 final class HHVCBuilder: BuilderProtocol{
     func createHHViewController(router: HHRouterProtocol) -> UIViewController {
-        let view = HHViewController()
-        let networkService = NetworkService()
-        let presenter = HHVCPresenter(network: networkService, view: view, router: router)
+        let networkService = DefaultNetworkService()
+        let imageDownload = ImageClient()
+        let presenter = HHVCPresenter(network: networkService, imageDownload: imageDownload, router: router)
+        let view = HHViewController(presenter: presenter)
+        presenter.viewHH = view
         view.presenterHH = presenter
         return view
     }
     
     func createDetailHHView(from: Int?, to: Int?, currency: String?, id: String) -> UIViewController {
-       let view = HHDetailViewController()
-       let networkService = NetworkService()
-       let presenter = HHDetailVCPresenter(from: from, to: to, currency: currency, id: id, detailView: view, network: networkService)
+        let networkService = DefaultNetworkService()
+       let presenter = HHDetailVCPresenter(from: from, to: to, currency: currency, id: id, network: networkService)
+       let view = HHDetailViewController(presenter: presenter)
+       presenter.detailView = view
        view.presenterHHDetail = presenter
        return view
    }

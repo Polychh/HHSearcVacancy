@@ -9,6 +9,7 @@ import Foundation
 
 protocol HHVCProtocol: AnyObject{
     func updateTableView()
+    func updateTipsTableView()
     func alertMessageValidate()
     func alertMessageNetwork(text: String)
     func alerMessageEndPages()
@@ -16,14 +17,17 @@ protocol HHVCProtocol: AnyObject{
     func reloadTableView()
 }
 
-protocol HHVCPresenterProtocol:AnyObject{
-    init(network: Network, view: HHVCProtocol?, router: HHRouterProtocol)
+protocol HHVCPresenterProtocol: AnyObject{
+    init(network: Network, imageDownload: NetworkImageClient, router: HHRouterProtocol)
     var vacanciesArray: [Item] {get set}
+    var tipsArray: [TipsItem] {get set}
     var isLoadingMoreVacancies: Bool {get set}
     var currentPage: Int {get set}
     var searchWord: String {get set}
     var networService: Network {get}
+    var imageDownload: NetworkImageClient {get}
     func getVacancies(vacancyName: String, page: Int)
+    func getTips(tipsText: String)
     func validateTextField(text: String) -> Bool
     func incrementPage()
     func cleanVacancyArray()
@@ -32,24 +36,30 @@ protocol HHVCPresenterProtocol:AnyObject{
 }
 
 final class HHVCPresenter: HHVCPresenterProtocol{
-    
     let networService: Network
+    let imageDownload: NetworkImageClient
     weak var viewHH: HHVCProtocol?
     var router: HHRouterProtocol?
     var vacanciesArray = [Item]()
+    var tipsArray = [TipsItem]()
     var isLoadingMoreVacancies = false
     var currentPage = 0
     var searchWord = ""
     private let locker = NSLock()
+    private var allPages = 0
     
-    init(network: Network, view: HHVCProtocol?,router: HHRouterProtocol ) {
+    init(network: Network, imageDownload: NetworkImageClient, router: HHRouterProtocol ) {
         self.networService = network
-        self.viewHH = view
+        self.imageDownload = imageDownload
         self.router = router
     }
     
     func getVacancies(vacancyName: String, page: Int) {
         loadVacancies(text: vacancyName, page: page)
+    }
+    
+    func getTips(tipsText: String){
+        loadTips(tips: tipsText)
     }
     
     func incrementPage(){
@@ -77,15 +87,17 @@ extension HHVCPresenter{
     private func loadVacancies(text: String, page: Int){
         isLoadingMoreVacancies = true
         searchWord = text
-        networService.getVacanciesInfo(for: text, page: page) { [weak self] results in
+        let request = VacancyInfoRequest(word: text, page: page)
+        networService.request(request) { [weak self] result in
             guard let self = self else { return }
-            if currentPage > networService.allPages{
+            if currentPage > allPages{
                 viewHH?.alerMessageEndPages()
             }else{
-                switch results{
+                switch result{
                 case .success(let result):
                     locker.lock()
-                    self.vacanciesArray.append(contentsOf: result)
+                    self.vacanciesArray.append(contentsOf: result.items)
+                    self.allPages = result.pages
                     locker.unlock()
                     if vacanciesArray.isEmpty{
                         viewHH?.emptyVacanciesArray()
@@ -98,6 +110,28 @@ extension HHVCPresenter{
                 }
             }
             isLoadingMoreVacancies = false
+        }
+    }
+}
+//MARK: - Loading Tips
+extension HHVCPresenter{
+    private func loadTips(tips: String){
+        tipsArray = []
+        let request = TipsRequest(word: tips)
+        networService.request(request) { [weak self] result in
+            guard let self = self else { return }
+            switch result{
+            case .success(let result):
+                locker.lock()
+                tipsArray.append(contentsOf: result.items)
+                locker.unlock()
+                if !tipsArray.isEmpty{
+                    viewHH?.updateTipsTableView()
+                }
+                
+            case .failure(let error):
+                print(error.rawValue)
+            }
         }
     }
 }

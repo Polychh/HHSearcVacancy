@@ -8,7 +8,7 @@
 import UIKit
 
 class HHDetailViewController: UIViewController {
-    var presenterHHDetail: HHDetailVCPresenterProtocol!
+    var presenterHHDetail: HHDetailVCPresenterProtocol
     
     private let vacancyNameLabel = HHLabel(textAlignment: .center, fontSize: 20, textColor: .black, textStyle: .title2)
     private let salaryFromLabel = HHLabel(textAlignment: .center, fontSize: 10, textColor: .black, textStyle: .headline)
@@ -19,7 +19,16 @@ class HHDetailViewController: UIViewController {
     private let scrollView = HHScrollView(hidden: false)
     private let stackViewH = HHStackView(axis: .horizontal, spacing: 0, aligment: .fill, distribut: .equalSpacing)
     private let stackViewV = HHStackView(axis: .vertical, spacing: 5.0, aligment: .leading, distribut: .equalSpacing)
-
+    
+    init(presenter: HHDetailVCPresenterProtocol) {
+        self.presenterHHDetail = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterHHDetail.getDetailVacancyInfo()
